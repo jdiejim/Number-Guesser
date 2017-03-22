@@ -2,6 +2,7 @@
 // TODO: color refactoring
 // TODO: max min inputs and container
 // TODO: enable buttons check deisable estate color
+// TODO: responsive
 
 // ------------ Colors ------------
 // --header--
@@ -27,7 +28,7 @@ $maxWidth : 75%;
 // TODO: emoji win animation
 // ------------ Animations ------------
 @keyframes rotateIcon {
-  85% { transform: rotate(-180deg); }
+  80% { transform: rotate(-360deg); }
   100% { transform: rotate(720deg); }
 }
 
@@ -58,6 +59,10 @@ body {
     background-color: $btnMagenta;
   }
 }
+
+// .hiddenClass {
+//   display: h
+// }
 
 
 // TODO: rearrage
@@ -147,4 +152,16 @@ p {
   &:hover {
     animation: rotateIcon 2s;
   }
+  &:focus {
+    outline: 0;
+  }
+}
+
+#range-container {
+  display: none;
+}
+
+#setRangeBtn {
+  display: block;
+  margin: 10px auto;
 }

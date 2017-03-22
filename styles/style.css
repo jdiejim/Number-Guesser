@@ -1,6 +1,6 @@
 @keyframes rotateIcon {
-  85% {
-    transform: rotate(-180deg); }
+  80% {
+    transform: rotate(-360deg); }
   100% {
     transform: rotate(720deg); } }
 body {
@@ -89,5 +89,14 @@ p {
   width: 20px; }
   #settingsBtn:hover {
     animation: rotateIcon 2s; }
+  #settingsBtn:focus {
+    outline: 0; }
+
+#range-container {
+  display: none; }
+
+#setRangeBtn {
+  display: block;
+  margin: 10px auto; }
 
 /*# sourceMappingURL=style.css.map */

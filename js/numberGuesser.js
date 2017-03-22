@@ -5,6 +5,7 @@ var lives;
 var max;
 var min;
 var randomNumber;
+var settingsVisibility;
 // --Inputs--
 var maxInput = document.getElementById('maxInput');
 var minInput = document.getElementById('minInput');
@@ -14,11 +15,12 @@ var settingsBtn = document.getElementById('settingsBtn');
 var guessBtn = document.getElementById('guessBtn');
 var clearBtn = document.getElementById('clearBtn');
 var resetBtn = document.getElementById('resetBtn');
+var setRangeBtn = document.getElementById('setRangeBtn');
 // --Elements--
 var errorMsg = document.getElementById('error-msg');
 var feedback = document.getElementById('feedback');
 var lastGuess = document.getElementById('last-guess');
-var rangeContainer = document.getElementById('range-cotainer');
+var rangeContainer = document.getElementById('range-container');
 // --Emojis--
 // TODO: add emojis
 var emojis = ["(¬‿¬)", "(◕‿◕✿)", "(ง'̀-'́)ง", "(~˘▾˘)~", "ʕ•ᴥ•ʔ", "༼ つ ◕_◕ ༽つ", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"];
@@ -26,7 +28,8 @@ var errorEmojis = [];
 var startEmojis = [];
 var winEmojis = [];
 
-// TODO: rearange
+// TODO: rearange main
+
 // ============ Main ============
 // ** Run Setup Game Environment **
 setupGame();
@@ -69,6 +72,7 @@ function main() {
 // ---- Functions ----
 // TODO: sort alpha names
 
+// TODO: figure how to make max and min disape
 // ** Setup Game Environment **
 function setupGame() {
   // --Game Environment--
@@ -77,6 +81,7 @@ function setupGame() {
   max = 100;
   min = 0;
   randomNumber = getRandomInt(max, min);
+  settingsVisibility = false;
   // --Render Start Emoji--
   loadEmoji();
   // --Update DOM Element Data--
@@ -123,7 +128,7 @@ function getRandomInt(max, min) {
 }
 
 
-// ---- Events ----
+// ============ Events ============
 guessBtn.addEventListener('click', main);
 
 clearBtn.addEventListener('click', function () {
@@ -132,8 +137,7 @@ clearBtn.addEventListener('click', function () {
 
 resetBtn.addEventListener('click', setupGame);
 
-// --Input: Enter key calls main() insted of reloading page--
-// TODO: escape code
+// --Enter Key Funcionality--
 guessInput.addEventListener('keyup', function(event) {
   if (event.keyCode == 13) {
     event.preventDefault();
@@ -144,13 +148,34 @@ guessInput.addEventListener('keyup', function(event) {
   }
 });
 
-// --Input: calls toggleRangeClass() instead of reloading page--
+// --Toggle Input Range Container--
 settingsBtn.addEventListener('click', function(event) {
   event.preventDefault();
-
+  if (settingsVisibility) {
+    rangeContainer.style.display = 'none';
+    settingsVisibility = false;
+  }
+  else {
+    rangeContainer.style.display = 'block';
+    settingsVisibility = true;
+  }
 });
 
-// TODO: comment with ====
-// TODO: make max a min disaper event listener
-// TODO: set new min and max envet
+// TODO: Bug on random variable; suggestion: setupGame with defaul min max as parameters
+setRangeBtn.addEventListener('click', function(event) {
+  setupGame();
+  max = maxInput.value;
+  min = minInput.value;
+  console.log('max');
+  console.log(max);
+  console.log('min');
+  console.log(min);
+  console.log('random');
+  console.log(randomNumber);
+  randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  // main();
+  console.log('max value');
+  console.log(maxInput.value);
+});
+
 // TODO: level up message with new rules

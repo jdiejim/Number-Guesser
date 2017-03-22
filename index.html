@@ -8,18 +8,16 @@
   </head>
   <body>
     <!-- TODO: Aria and Accesibility-->
+    <!-- TODO: tab order -->
     <header>
       <h1><span>Number</span> Guesser</h1>
     </header>
     <main>
       <form class="" action="index.html" method="post">
-        <!-- TODO: tab order -->
           <input id="guessInput" type="number" name="" value="" placeholder="Enter your guess">
-          <!-- TODO: add eventlistener to button toggle class open min and max button -->
-          <input id="settingsBtn" type="submit" name="" value="">
+          <input id="settingsBtn" type="button" name="" value="">
           <p id="error-msg"></p>
-        <!-- TODO: check if removed -->
-        <div class="">
+        <div class="" role="container for buttons">
           <button id="guessBtn" class="btn-global" type="button" name="button">Guess</button>
           <button id="clearBtn" class="btn-global" type="button" name="button">Clear</button>
         </div>
@@ -28,6 +26,7 @@
           <input id="minInput" class="range-input" type="number" name="" value="" placeholder="0">
           <label for="maxInput">Max</label>
           <input id="maxInput" class="range-input" type="number" name="" value="" placeholder="1">
+          <button id="setRangeBtn" class="btn-global" type="button" name="button">Set</button>
         </div>
       </form>
       <section>
@@ -37,6 +36,8 @@
         <button id="resetBtn" class="btn-global" type="button" name="button">Reset</button>
       </section>
     </main>
+
+  <!-- Scripts -->
   <script type="text/javascript" src="js/numberGuesser.js"></script>
   </body>
 </html>
