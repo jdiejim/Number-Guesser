@@ -14,10 +14,11 @@ var settingsBtn = document.getElementById('settingsBtn');
 var guessBtn = document.getElementById('guessBtn');
 var clearBtn = document.getElementById('clearBtn');
 var resetBtn = document.getElementById('resetBtn');
-// --Text--
+// --Elements--
 var errorMsg = document.getElementById('error-msg');
-var lastGuess = document.getElementById('last-guess');
 var feedback = document.getElementById('feedback');
+var lastGuess = document.getElementById('last-guess');
+var rangeContainer = document.getElementById('range-cotainer');
 // --Emojis--
 // TODO: add emojis
 var emojis = ["(¬‿¬)", "(◕‿◕✿)", "(ง'̀-'́)ง", "(~˘▾˘)~", "ʕ•ᴥ•ʔ", "༼ つ ◕_◕ ༽つ", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"];
@@ -146,8 +147,10 @@ guessInput.addEventListener('keyup', function(event) {
 // --Input: calls toggleRangeClass() instead of reloading page--
 settingsBtn.addEventListener('click', function(event) {
   event.preventDefault();
+
 });
 
 // TODO: comment with ====
 // TODO: make max a min disaper event listener
 // TODO: set new min and max envet
+// TODO: level up message with new rules
