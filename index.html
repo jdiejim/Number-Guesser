@@ -7,22 +7,27 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
   <body>
+    <!-- TODO: Aria and Accesibility-->
     <header>
       <h1><span>Number</span> Guesser</h1>
     </header>
     <main>
-      <p id="error-msg"></p>
       <form class="" action="index.html" method="post">
-        <!-- TODO: input type and other stuff -->
-        <!-- TODO: check if removed -->
-        <div class="input-container">
-          <input id="guessInput" type="input" name="" value="" placeholder="Enter your guess">
-          <img class="svg-icon" src="assets/settings.svg" alt="">
-        </div>
+        <!-- TODO: tab order -->
+          <input id="guessInput" type="number" name="" value="" placeholder="Enter your guess">
+          <!-- TODO: add eventlistener to button toggle class open min and max button -->
+          <input id="settingsBtn" type="submit" name="" value="">
+          <p id="error-msg"></p>
         <!-- TODO: check if removed -->
         <div class="">
           <button id="guessBtn" class="btn-global" type="button" name="button">Guess</button>
           <button id="clearBtn" class="btn-global" type="button" name="button">Clear</button>
+        </div>
+        <div class="range-container" role="range input container">
+          <label for="minInput">Min</label>
+          <input id="minInput" class="range-input" type="number" name="" value="" placeholder="0">
+          <label for="maxInput">Max</label>
+          <input id="maxInput" class="range-input" type="number" name="" value="" placeholder="1">
         </div>
       </form>
       <section>
@@ -31,9 +36,6 @@
         <p id="feedback">Click Guess to START!</p>
         <button id="resetBtn" class="btn-global" type="button" name="button">Reset</button>
       </section>
-      <!-- TODO: add max and min -->
-      <aside class="">
-      </aside>
     </main>
   <script type="text/javascript" src="js/numberGuesser.js"></script>
   </body>

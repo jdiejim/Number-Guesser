@@ -1,10 +1,11 @@
 @keyframes rotateIcon {
-  80% {
+  85% {
     transform: rotate(-180deg); }
   100% {
     transform: rotate(720deg); } }
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 150%;
   margin: 0; }
 
 .input-container {
@@ -21,19 +22,16 @@ body {
   .btn-global:hover {
     background-color: #EB008B; }
 
-.svg-icon {
-  height: 20px;
-  margin-left: 5px;
-  position: absolute;
-  top: 2px;
-  width: 20px; }
-  .svg-icon:hover {
-    animation: rotateIcon 2s; }
+.range-input {
+  width: 10%; }
+
+label {
+  font-size: 80%; }
 
 header {
   background-color: #404041;
   margin: 0 auto;
-  max-width: 40%;
+  max-width: 75%;
   text-align: center; }
 
 h1 {
@@ -47,9 +45,9 @@ h1 {
 main {
   color: #404041;
   margin: 0 auto;
-  max-width: 40%;
+  max-width: 75%;
   text-align: center;
-  border: 0px solid black; }
+  border: 1px solid black; }
 
 form {
   margin: 10px auto;
@@ -59,15 +57,14 @@ form {
     margin: 10px;
     min-width: 100px; }
 
-input {
-  border: 1px solid #D0D2D3;
-  color: #D0D2D3;
-  padding: 5px;
-  width: 59%; }
-
 p {
   margin: 0;
-  border: 0px solid black; }
+  border: 1px solid black; }
+
+#guessInput {
+  border: 1px solid #D0D2D3;
+  padding: 5px;
+  width: 59%; }
 
 #last-guess {
   color: #EB008B;
@@ -81,5 +78,16 @@ p {
   color: #EB008B;
   font-size: 12px;
   font-weight: 700; }
+
+#settingsBtn {
+  background: url(/assets/settings.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  height: 20px;
+  margin-left: 5px;
+  width: 20px; }
+  #settingsBtn:hover {
+    animation: rotateIcon 2s; }
 
 /*# sourceMappingURL=style.css.map */

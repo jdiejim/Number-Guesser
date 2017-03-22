@@ -1,5 +1,8 @@
 // TODO: alphabetical sort
 // TODO: color refactoring
+// TODO: max min inputs and container
+// TODO: enable buttons check deisable estate color
+
 // ------------ Colors ------------
 // --header--
 $headerBg: #404041;
@@ -16,19 +19,21 @@ $inputColor: #D0D2D3;
 $mainText: #404041;
 $mainMagenta: #EB008B;
 
-$borderTest: 0px solid black;
+$borderTest: 1px solid black;
 
+// ------------ Measures ------------
+$maxWidth : 75%;
 
 // ------------ Animations ------------
 @keyframes rotateIcon {
-  80% { transform: rotate(-180deg); }
+  85% { transform: rotate(-180deg); }
   100% { transform: rotate(720deg); }
 }
-
 
 // ------------ Setup ------------
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 150%;
   margin: 0;
 }
 
@@ -53,23 +58,22 @@ body {
   }
 }
 
-// TODO: checked if removed better
-.svg-icon {
-  height: 20px;
-  margin-left: 5px;
-  position: absolute;
-  top: 2px;
-  width: 20px;
-  &:hover {
-    animation: rotateIcon 2s;
-  }
+
+// TODO: rearrage
+
+.range-input {
+  width: 10%;
+}
+
+label {
+  font-size: 80%;
 }
 
 // ------------ Header ------------
 header {
   background-color: $headerBg;
   margin: 0 auto;
-  max-width: 40%;
+  max-width: $maxWidth;
   text-align: center;
 }
 
@@ -87,7 +91,7 @@ h1 {
 main {
   color: $mainText;
   margin: 0 auto;
-  max-width: 40%;
+  max-width: $maxWidth;
   text-align: center;
   border: $borderTest;
 }
@@ -102,19 +106,19 @@ form {
   }
 }
 
-input {
-  border: 1px solid $inputColor;
-  color: $inputColor;
-  padding: 5px;
-  width: 59%;
-}
-
 p {
   margin: 0;
   border: $borderTest;
 }
 
 // ------------ Id ------------
+
+#guessInput {
+  border: 1px solid $inputColor;
+  padding: 5px;
+  width: 59%;
+}
+
 #last-guess {
   color: $mainMagenta;
   font-size: 72px;
@@ -129,4 +133,17 @@ p {
   color: $mainMagenta;
   font-size: 12px;
   font-weight: 700;
+}
+
+#settingsBtn {
+  background: url(/assets/settings.svg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: none;
+  height: 20px;
+  margin-left: 5px;
+  width: 20px;
+  &:hover {
+    animation: rotateIcon 2s;
+  }
 }

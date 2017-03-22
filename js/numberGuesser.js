@@ -7,9 +7,10 @@ var max = 100;
 var min = 0;
 var randomNumber = getRandomInt(max, min);
 // --Inputs--
-// var maxInput = document.getElementById('maxInput');
-// var minInput = document.getElementById('minInput');
+var maxInput = document.getElementById('maxInput');
+var minInput = document.getElementById('minInput');
 var guessInput = document.getElementById('guessInput');
+var settingsBtn = document.getElementById('settingsBtn');
 // --Buttons--
 var guessBtn = document.getElementById('guessBtn');
 var clearBtn = document.getElementById('clearBtn');
@@ -19,9 +20,17 @@ var errorMsg = document.getElementById('error-msg');
 var lastGuess = document.getElementById('last-guess');
 var feedback = document.getElementById('feedback');
 
+// TODO: larger loading function
 // --Render Emoji--
 loadEmoji();
 
+// TODO: rearrage
+// TODO: loading function
+// --Display Range Inputs--
+minInput.value = min;
+maxInput.value = max;
+
+// TODO: set max and min
 // ---- Main ----
 function main() {
   console.log(randomNumber);
@@ -30,6 +39,8 @@ function main() {
 
 // --Error Filter--
 // TODO: out of range function toggle on and off; reset emoji
+
+// TODO: error functions should render bad emoji and feedback should update
   if (guess > max || guess < min) {
     errorMsg.innerText = "Out of range! Please enter number between " + min + " - " + max;
   }
@@ -57,6 +68,14 @@ function main() {
 
 // ---- Functions ----
 // TODO: sort alpha names
+
+function setupGame() {
+  // TODO: setup variables
+// TODO: setup attributes for input max and min
+// TODO: render emjojis
+// TODO: render max and min input
+}
+
 function loadEmoji() {
   var randEmoji = getRandomInt(-1, 7);
   lastGuess.innerText = emojis[randEmoji];
@@ -90,6 +109,7 @@ function resetGame() {
   lives = 5;
   max = 100;
   min = 1;
+  // TODO: setup game
 
   console.log(randomNumber);
   console.log(max);
@@ -104,3 +124,23 @@ clearBtn.addEventListener('click', function () {
 });
 
 resetBtn.addEventListener('click', resetGame);
+
+// --Input: Enter key calls main() insted of reloading page--
+// TODO: escape code
+guessInput.addEventListener('keyup', function(event) {
+  if (event.keyCode == 13) {
+    event.preventDefault();
+    main();
+  }
+  if (event.keyCode == 27) {
+    guessInput.value = "";
+  }
+});
+
+// --Input: calls toggleRangeClass() instead of reloading page--
+settingsBtn.addEventListener('click', function(event) {
+  event.preventDefault();
+});
+
+// TODO: comment with ====
+// TODO: make max a min disaper event listener
