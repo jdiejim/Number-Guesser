@@ -22,11 +22,9 @@ var feedback = document.getElementById('feedback');
 var lastGuess = document.getElementById('last-guess');
 var rangeContainer = document.getElementById('range-container');
 // --Emojis--
-// TODO: add emojis
-var emojis = ["(¬‿¬)", "(◕‿◕✿)", "(ง'̀-'́)ง", "(~˘▾˘)~", "ʕ•ᴥ•ʔ", "༼ つ ◕_◕ ༽つ", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"];
-var errorEmojis = [];
-var startEmojis = [];
-var winEmojis = [];
+var errorEmojis = ['(ಥ﹏ಥ)', 'ಥ_ಥ', '༼ つ ◕_◕ ༽つ', 'ლ(ಠ益ಠლ)', '༼ つ ಥ_ಥ ༽つ'];
+var startEmojis = ["(ง'̀-'́)ง", '(◕‿◕✿)', '(¬‿¬)', '╚(ಠ_ಠ)=┐', '(｡◕‿◕｡)'];
+var winEmojis = ['(~˘▾˘)~', '~(˘▾˘~)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '(づ｡◕‿‿◕｡)づ', '♥‿♥' ];
 
 // TODO: rearange main
 
@@ -49,7 +47,7 @@ function main() {
   }
 
   if (isNaN(guess)) {
-    lastGuess.innerText = ":(";
+    loadEmoji('error');
     feedback.innerText = "Please enter a numeric value";
     console.log('error');
   }
@@ -83,7 +81,7 @@ function setupGame() {
   randomNumber = getRandomInt(max, min);
   settingsVisibility = false;
   // --Render Start Emoji--
-  loadEmoji();
+  loadEmoji('start');
   // --Update DOM Element Data--
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
@@ -102,7 +100,7 @@ function levelUp() {
   min -= 10;
   randomNumber = getRandomInt(max, min);
   // --Render Win Emoji--
-  loadEmoji();
+  loadEmoji('win');
   // --Update DOM Element Data--
   feedback.innerText = "BOOM!";
   guessInput.value = "";
@@ -118,11 +116,24 @@ function levelUp() {
   console.log(min);
 }
 
-function loadEmoji() {
-  var randEmoji = getRandomInt(-1, 7);
-  lastGuess.innerText = emojis[randEmoji];
+function loadEmoji(type) {
+  var randEmoji = getRandomInt(-1, 5);
+  switch (type) {
+    case 'error':
+      lastGuess.innerText = errorEmojis[randEmoji];
+      break;
+    case 'win':
+      lastGuess.innerText = winEmojis[randEmoji];
+      break;
+    case 'start':
+      lastGuess.innerText = startEmojis[randEmoji];
+      break;
+    default:
+      lastGuess.innerText = startEmojis[randEmoji];
+  }
 }
 
+// TODO: check random forumla
 function getRandomInt(max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -179,3 +190,5 @@ setRangeBtn.addEventListener('click', function(event) {
 });
 
 // TODO: level up message with new rules
+// TODO: lose game event
+// TODO: lives and lost emoji
