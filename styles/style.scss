@@ -1,0 +1,132 @@
+// TODO: alphabetical sort
+// TODO: color refactoring
+// ------------ Colors ------------
+// --header--
+$headerBg: #404041;
+$headerMagenta: #ED458B;
+$headerWhite: #E6E7E8;
+// --button--
+$btnDisabled: #D0D2D3;
+$btnMagenta: #EB008B;
+$btnEnable: #929497;
+$btnText: #FFFFFF;
+// --input--
+$inputColor: #D0D2D3;
+// --text--
+$mainText: #404041;
+$mainMagenta: #EB008B;
+
+$borderTest: 0px solid black;
+
+
+// ------------ Animations ------------
+@keyframes rotateIcon {
+  80% { transform: rotate(-180deg); }
+  100% { transform: rotate(720deg); }
+}
+
+
+// ------------ Setup ------------
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+// ------------ Global Classes ------------
+
+// TODO: check if removed better
+.input-container {
+  position: relative;
+}
+
+.btn-global {
+  background-color: $btnDisabled;
+  border-radius: 10px;
+  border-style: none;
+  color: $btnText;
+  font-weight: 300;
+  &:focus {
+    background-color: $btnEnable;
+  }
+  &:hover {
+    background-color: $btnMagenta;
+  }
+}
+
+// TODO: checked if removed better
+.svg-icon {
+  height: 20px;
+  margin-left: 5px;
+  position: absolute;
+  top: 2px;
+  width: 20px;
+  &:hover {
+    animation: rotateIcon 2s;
+  }
+}
+
+// ------------ Header ------------
+header {
+  background-color: $headerBg;
+  margin: 0 auto;
+  max-width: 40%;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+  color: $headerWhite;
+  margin: 0;
+  span {
+    color: $headerMagenta;
+    font-weight: 700;
+  }
+}
+
+// ------------ Main ------------
+main {
+  color: $mainText;
+  margin: 0 auto;
+  max-width: 40%;
+  text-align: center;
+  border: $borderTest;
+}
+
+form {
+  margin: 10px auto;
+  width: 100%;
+  button {
+    font-size: 16px;
+    margin: 10px;
+    min-width: 100px;
+  }
+}
+
+input {
+  border: 1px solid $inputColor;
+  color: $inputColor;
+  padding: 5px;
+  width: 59%;
+}
+
+p {
+  margin: 0;
+  border: $borderTest;
+}
+
+// ------------ Id ------------
+#last-guess {
+  color: $mainMagenta;
+  font-size: 72px;
+}
+
+#resetBtn {
+  margin-top: 10px;
+  width: 59%;
+}
+
+#error-msg {
+  color: $mainMagenta;
+  font-size: 12px;
+  font-weight: 700;
+}
