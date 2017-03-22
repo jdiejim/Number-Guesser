@@ -21,10 +21,6 @@ var errorMsg = document.getElementById('error-msg');
 var feedback = document.getElementById('feedback');
 var lastGuess = document.getElementById('last-guess');
 var rangeContainer = document.getElementById('range-container');
-// --Emojis--
-var errorEmojis = ['(ಥ﹏ಥ)', 'ಥ_ಥ', '༼ つ ◕_◕ ༽つ', 'ლ(ಠ益ಠლ)', '༼ つ ಥ_ಥ ༽つ'];
-var startEmojis = ["(ง'̀-'́)ง", '(◕‿◕✿)', '(¬‿¬)', '╚(ಠ_ಠ)=┐', '(｡◕‿◕｡)'];
-var winEmojis = ['(~˘▾˘)~', '~(˘▾˘~)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '(づ｡◕‿‿◕｡)づ', '♥‿♥' ];
 
 // TODO: rearange main
 
@@ -117,6 +113,11 @@ function levelUp() {
 }
 
 function loadEmoji(type) {
+  // --Emoji Types--
+  var errorEmojis = ['(ಥ﹏ಥ)', 'ಥ_ಥ', '༼ つ ◕_◕ ༽つ', 'ლ(ಠ益ಠლ)', '༼ つ ಥ_ಥ ༽つ'];
+  var startEmojis = ["(ง'̀-'́)ง", '(◕‿◕✿)', '(¬‿¬)', '╚(ಠ_ಠ)=┐', '(｡◕‿◕｡)'];
+  var winEmojis = ['(~˘▾˘)~', '~(˘▾˘~)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '(づ｡◕‿‿◕｡)づ', '♥‿♥' ];
+  // --Generate Random Emoji Based on Type--
   var randEmoji = getRandomInt(-1, 5);
   switch (type) {
     case 'error':
