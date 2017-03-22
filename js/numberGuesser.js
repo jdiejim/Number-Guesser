@@ -1,7 +1,5 @@
-
-// ---- Global Variables ----
-// TODO: win emoji, error emoji, lose emoji, level variable, level p
-var emojis = ["(¬‿¬)", "(◕‿◕✿)", "(ง'̀-'́)ง", "(~˘▾˘)~", "ʕ•ᴥ•ʔ", "༼ つ ◕_◕ ༽つ", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"];
+// ============ Global Variables ============
+// --Game Environment--
 var level;
 var lives;
 var max;
@@ -21,21 +19,18 @@ var errorMsg = document.getElementById('error-msg');
 var lastGuess = document.getElementById('last-guess');
 var feedback = document.getElementById('feedback');
 // --Emojis--
+// TODO: add emojis
+var emojis = ["(¬‿¬)", "(◕‿◕✿)", "(ง'̀-'́)ง", "(~˘▾˘)~", "ʕ•ᴥ•ʔ", "༼ つ ◕_◕ ༽つ", "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧"];
 var errorEmojis = [];
 var startEmojis = [];
 var winEmojis = [];
 
-// --setup Game--
+// TODO: rearange
+// ============ Main ============
+// ** Run Setup Game Environment **
 setupGame();
 
-// TODO: rearrage
-// TODO: loading function
-// --Display Range Inputs--
-minInput.value = min;
-maxInput.value = max;
-
-// TODO: set max and min
-// ---- Main ----
+// ** Main Game Function **
 function main() {
   console.log(randomNumber);
   var guess = parseInt(guessInput.value);
@@ -73,25 +68,48 @@ function main() {
 // ---- Functions ----
 // TODO: sort alpha names
 
+// ** Setup Game Environment **
 function setupGame() {
-  // --game environment--
+  // --Game Environment--
   level = 1;
   lives = 5;
   max = 100;
   min = 0;
   randomNumber = getRandomInt(max, min);
-  // --render emoji--
+  // --Render Start Emoji--
   loadEmoji();
-
-  // --Display in DOM--
-  feedback.innerText = "Click Guess to START!";
+  // --Update DOM Element Data--
+  feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
-  minInput.value = min;
   maxInput.value = max;
-
-  // --attirbute for range--
-  guessInput.setAttribute('min', min);
+  minInput.value = min;
+  // --Set Attribute for Defined Range Inputs--
   guessInput.setAttribute('max', max);
+  guessInput.setAttribute('min', min);
+}
+
+function levelUp() {
+  // --Game Environment--
+  level += 1;
+  lives = 5;
+  max += 10;
+  min -= 10;
+  randomNumber = getRandomInt(max, min);
+  // --Render Win Emoji--
+  loadEmoji();
+  // --Update DOM Element Data--
+  feedback.innerText = "BOOM!";
+  guessInput.value = "";
+  maxInput.value = max;
+  minInput.value = min;
+  // --Update Attribute for Defined Range Inputs--
+  guessInput.setAttribute('max', max);
+  guessInput.setAttribute('min', min);
+
+  // TODO: remove logs
+  console.log(randomNumber);
+  console.log(max);
+  console.log(min);
 }
 
 function loadEmoji() {
@@ -103,43 +121,6 @@ function getRandomInt(max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function levelUp() {
-  // TODO: update max min values
-  // TODO: rearrage values
-  randomNumber = getRandomInt(max, min);
-  feedback.innerText = "BOOM!";
-  guessInput.value = "";
-  loadEmoji();
-  level += 1;
-  lives = 5;
-  max += 10;
-  min -= 10;
-  minInput.value = min;
-  maxInput.value = max;
-  guessInput.setAttribute('min', min);
-  guessInput.setAttribute('max', max);
-
-  console.log(randomNumber);
-  console.log(max);
-  console.log(min);
-}
-
-// TODO: check if removed
-function resetGame() {
-  randomNumber = getRandomInt(max, min);
-  loadEmoji();
-  feedback.innerText = "Click Guess to START!";
-  guessInput.value = "";
-  level = 1;
-  lives = 5;
-  max = 100;
-  min = 1;
-  // TODO: setup game
-
-  console.log(randomNumber);
-  console.log(max);
-  console.log(min);
-}
 
 // ---- Events ----
 guessBtn.addEventListener('click', main);
