@@ -12,7 +12,6 @@
     color: white; } }
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 150%;
   margin: 0; }
 
 .input-container {
@@ -87,14 +86,16 @@ label {
 
 header {
   background-color: #404041;
-  margin: 0 auto;
-  max-width: 75%;
+  border: 1px solid black;
+  max-width: 100%;
   text-align: center; }
 
 h1 {
-  font-weight: 300;
   color: #E6E7E8;
-  margin: 0; }
+  font-size: 350%;
+  font-weight: 300;
+  margin: 8px auto;
+  max-width: 50%; }
   h1 span {
     color: #ED458B;
     font-weight: 700; }
@@ -102,9 +103,9 @@ h1 {
 main {
   color: #404041;
   margin: 0 auto;
-  max-width: 75%;
+  max-width: 100%;
   text-align: center;
-  border: 0px solid black; }
+  border: 1px solid black; }
 
 form {
   margin: 10px auto;
@@ -116,6 +117,6 @@ form {
 
 p {
   margin: 20px 0px;
-  border: 0px solid black; }
+  border: 1px solid black; }
 
 /*# sourceMappingURL=style.css.map */

@@ -26,10 +26,10 @@ $mainMagenta: #EB008B;
 $mainText: #404041;
 
 // test
-$borderTest: 0px solid black;
+$borderTest: 1px solid black;
 
 // ============ Measurements ============
-$maxWidth : 75%;
+$maxWidth : 100%;
 
 // ============ Animations ============
 @keyframes rotateIcon {
@@ -46,7 +46,7 @@ $maxWidth : 75%;
 // ============ Setup ============
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 150%;
+  // font-size: 150%;
   margin: 0;
 }
 
@@ -145,15 +145,18 @@ label {
 // ============ Header ============
 header {
   background-color: $headerBg;
-  margin: 0 auto;
+  border: $borderTest;                // TODO: eliminate
+  // margin: 0 auto;                     // TODO: eliminate
   max-width: $maxWidth;
   text-align: center;
 }
 
 h1 {
-  font-weight: 300;
   color: $headerWhite;
-  margin: 0;
+  font-size: 350%;
+  font-weight: 300;
+  margin: 8px auto;
+  max-width: 50%;            // TODO: media query for short
   span {
     color: $headerMagenta;
     font-weight: 700;
