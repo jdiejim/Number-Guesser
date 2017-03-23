@@ -51,48 +51,11 @@ body {
 }
 
 // ============ Global Classes ============
-// TODO: check if removed
-// .input-container {
-//   position: relative;
-// }
-
-
-
 .spark {
   animation: twinkle 3s infinite;
 }
 
-// TODO: rearrage
 
-
-
-// ============ ID ============
-
-#last-guess {
-  color: $mainMagenta;
-  font-size: 72px;
-}
-
-#resetBtn {
-  margin-top: 10px;
-  font-size: 18px;
-  width: 59%;
-}
-
-
-
-
-#setRangeBtn {
-  display: block;
-  margin: 10px auto;
-}
-
-#new-ranges {
-  color: $mainMagenta;
-  font-size: 15px;
-  font-weight: 700;
-  opacity: 0.8;
-}
 
 // ============ Header ============
 header {
@@ -115,7 +78,6 @@ h1 {
 
 // ============ Main ============
 main {
-  border: $borderTest;     // TODO: eliminate
   color: $mainText;
   text-align: center;
 }
@@ -123,11 +85,6 @@ form {
   margin: 20px auto;
   max-width: 35%;
   position: relative;
-  button {
-    font-size: 16px;
-    margin: 10px;
-    min-width: 100px;
-  }
 }
 
 #guessInput {
@@ -212,9 +169,63 @@ form {
   max-width: 75%;
 }
 
+section {
+  border: $borderTest;
+  height: 350px;
+  margin: 20px auto;
+  max-width: 35%;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  p {
+    border: $borderTest;
+    font-size: 130%;
+    margin: 0;
+  }
+}
+
+#last-guess {
+  background-color: blue;
+  color: $mainMagenta;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+    top: 25%;
+    left: 25%;
+  // margin-top: 100px;
+  // font-size: 20vw;
+  // height: 60%;
+  // position: absolute;
+  width: 100%;
+}
+
+#feedback {
+  position: absolute;
+    bottom: 15%;
+    left: 0;
+  width: 100%;
+}
+
+#resetBtn {
+  font-size: 150%;
+  margin: 0;
+  position: absolute;
+    bottom: 0;
+    left: 0;
+  width: 100%;
+}
 
 
-p {
-  // margin: 20px 0px;
-  // border: $borderTest;
+
+//
+// #setRangeBtn {
+//   display: block;
+//   margin: 10px auto;
+// }
+
+#new-ranges {
+  color: $mainMagenta;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.8;
 }

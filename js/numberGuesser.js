@@ -30,6 +30,7 @@ setupGame();          // Setup Game Environment to default values
 
 // Main Function checks for errors and starts game
 function main() {
+  console.log(randomNumber);
   var guess = parseInt(guessInput.value);         // Gets value from guess input
 
   // Update DOM Element Data
@@ -74,6 +75,7 @@ function setupGame() {
   loadEmoji('start');                     // Renders emoji of type start
 
   // Update DOM Elements Data to default values
+  errorMsg.innerText = "";
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
   indicator.innerText = "Good Luck!";

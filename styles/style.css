@@ -17,25 +17,6 @@ body {
 .spark {
   animation: twinkle 3s infinite; }
 
-#last-guess {
-  color: #EB008B;
-  font-size: 72px; }
-
-#resetBtn {
-  margin-top: 10px;
-  font-size: 18px;
-  width: 59%; }
-
-#setRangeBtn {
-  display: block;
-  margin: 10px auto; }
-
-#new-ranges {
-  color: #EB008B;
-  font-size: 15px;
-  font-weight: 700;
-  opacity: 0.8; }
-
 header {
   background-color: #404041;
   border: 1px solid black;
@@ -52,7 +33,6 @@ h1 {
     font-weight: 700; }
 
 main {
-  border: 1px solid black;
   color: #404041;
   text-align: center; }
 
@@ -60,10 +40,6 @@ form {
   margin: 20px auto;
   max-width: 35%;
   position: relative; }
-  form button {
-    font-size: 16px;
-    margin: 10px;
-    min-width: 100px; }
 
 #guessInput {
   border: 1px solid #D0D2D3;
@@ -134,5 +110,48 @@ form {
   padding-bottom: 1%;
   padding-left: 2%;
   max-width: 75%; }
+
+section {
+  border: 1px solid black;
+  height: 350px;
+  margin: 20px auto;
+  max-width: 35%;
+  padding-top: 20px;
+  position: relative;
+  text-align: center; }
+  section p {
+    border: 1px solid black;
+    font-size: 130%;
+    margin: 0; }
+
+#last-guess {
+  background-color: blue;
+  color: #EB008B;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 100%; }
+
+#feedback {
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  width: 100%; }
+
+#resetBtn {
+  font-size: 150%;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+
+#new-ranges {
+  color: #EB008B;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.8; }
 
 /*# sourceMappingURL=style.css.map */
