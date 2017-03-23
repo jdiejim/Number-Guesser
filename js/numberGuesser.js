@@ -220,14 +220,6 @@ settingsBtn.addEventListener('click', function(event) {       // Setting Button 
 });
 
 
-
-//phase 1
-// TODO: README.md
-
 //phase 2
 // TODO: clear button disabled
 // TODO: rest button disabled
-
-//other
-// TODO: emoji win Animations
-// TODO: lives functionality
