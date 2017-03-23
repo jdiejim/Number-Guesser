@@ -228,9 +228,6 @@ settingsBtn.addEventListener('click', function(event) {       // Setting Button 
 // TODO: clear button disabled
 // TODO: rest button disabled
 
-//Important!
-// TODO: Responsive CSS
-
 //other
 // TODO: emoji win Animations
 // TODO: lives functionality

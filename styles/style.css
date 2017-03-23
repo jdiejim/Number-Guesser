@@ -161,4 +161,21 @@ section {
   font-weight: 700;
   opacity: 0.8; }
 
+@media (max-width: 910px) {
+  h1 {
+    max-width: 70%; } }
+@media (max-width: 650px) {
+  h1 {
+    max-width: 100%;
+    font-size: 320%; }
+
+  #guessInput {
+    font-size: 150%; }
+
+  #new-ranges {
+    font-size: 12px; }
+
+  .btn-global {
+    font-size: 140%; } }
+
 /*# sourceMappingURL=style.css.map */
