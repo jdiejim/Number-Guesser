@@ -204,7 +204,6 @@ setRangeBtn.addEventListener('click', function(event) {
   console.log(randomNumber);
 });
 
-// BUG: set max and min maybe wit default
 // TODO: emoji win animation
 // TODO: lose game event
 // TODO: lives and lost emoji
