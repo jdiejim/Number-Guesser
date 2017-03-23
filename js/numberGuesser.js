@@ -100,9 +100,9 @@ function levelUp() {
   // --Update DOM Element Data--
   feedback.innerText = "BOOM!";
   guessInput.value = "";
-  indicator.innerText = "Awesome!";
+  indicator.innerText = "Awesome! Get Ready!";
   newRanges.className += "spark";
-  newRanges.innerText = "New challenge! Level " + level + " Guess between " + min + " and " + max;
+  newRanges.innerText = "Level " + level + ":   Guess between " + min + " and " + max;
   maxInput.value = max;
   minInput.value = min;
   // --Update Attribute for Defined Range Inputs--
@@ -111,7 +111,6 @@ function levelUp() {
 
   // TODO: remove logs
   console.log(randomNumber);
-
 }
 
 function loadEmoji(type) {
@@ -174,7 +173,7 @@ settingsBtn.addEventListener('click', function(event) {
   }
 });
 
-// TODO: Bug on random variable; suggestion: setupGame with defaul min max as parameters
+// BUG: Bug on random variable; suggestion: setupGame with defaul min max as parameters
 setRangeBtn.addEventListener('click', function(event) {
   setupGame();
   max = maxInput.value;
@@ -191,6 +190,12 @@ setRangeBtn.addEventListener('click', function(event) {
   console.log(maxInput.value);
 });
 
-// TODO: level up message with new rules
+// BUG: set max and min maybe wit default
+// TODO: emoji win animation
 // TODO: lose game event
 // TODO: lives and lost emoji
+// TODO: hearts lose lives
+// TODO: scoring
+// TODO: 2players
+// TODO: create readme.md IMPORTAN!!!!!!!!!!!!!!!!!
+// TODO: disabled buttons
