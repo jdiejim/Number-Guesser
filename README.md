@@ -14,9 +14,9 @@ The game has two types of modes: normal and custom.
 
 ## Other Information
 * The player can submit the guess number by clicking the guess button, or by pressing the Enter key.
-* The player can clear the guess number by clicking the clear button, by pressing the delete key, or by pressing the Esc key.
+* The player can clear the guess number by clicking the clear button, or by pressing the Esc key.
 * The player can reset the game by pressing the reset button.
-* The reset button sets the game to its normal default environment.
+* The reset button sets the game to the normal default environment.
 
 ## Types of modes
 There are two types of games:
