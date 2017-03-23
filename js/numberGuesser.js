@@ -81,11 +81,13 @@ function setupGame() {
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
   indicator.innerText = "Good Luck!";
-  maxInput.value = max;
-  minInput.value = min;
+  maxInput.value = 100;
+  minInput.value = 0;
+  newRanges.className = "";
+  newRanges.innerText = "";
   // --Set Attribute for Defined Range Inputs--
-  guessInput.setAttribute('max', max);
-  guessInput.setAttribute('min', min);
+  guessInput.setAttribute('max', 100);
+  guessInput.setAttribute('min', 0);
 }
 
 function levelUp() {
@@ -113,6 +115,27 @@ function levelUp() {
   console.log(randomNumber);
 }
 
+function customGame() {
+  // --Game Environment--
+  level = 1;
+  lives = 5;
+  randomNumber = getRandomInt(max, min);
+  settingsVisibility = false;
+  // --Render Start Emoji--
+  loadEmoji('start');
+  // --Update DOM Element Data--
+  feedback.innerText = "Click Guess to START GAME!";
+  guessInput.value = "";
+  indicator.innerText = "Good Luck!";
+  maxInput.value = max;
+  minInput.value = min;
+  newRanges.className = "";
+  newRanges.innerText = "";
+  // --Set Attribute for Defined Range Inputs--
+  guessInput.setAttribute('max', max);
+  guessInput.setAttribute('min', min);
+}
+
 function loadEmoji(type) {
   // --Emoji Types--
   var errorEmojis = ['(ಥ﹏ಥ)', 'ಥ_ಥ', '༼ つ ◕_◕ ༽つ', 'ლ(ಠ益ಠლ)', '༼ つ ಥ_ಥ ༽つ'];
@@ -136,8 +159,8 @@ function loadEmoji(type) {
 }
 
 // TODO: check random forumla
-function getRandomInt(max, min) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomInt(maxVal, minVal) {
+  return Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
 }
 
 // ============ Events ============
@@ -173,21 +196,12 @@ settingsBtn.addEventListener('click', function(event) {
   }
 });
 
-// BUG: Bug on random variable; suggestion: setupGame with defaul min max as parameters
 setRangeBtn.addEventListener('click', function(event) {
-  setupGame();
-  max = maxInput.value;
-  min = minInput.value;
-  console.log('max');
-  console.log(max);
-  console.log('min');
-  console.log(min);
-  console.log('random');
+  max = parseInt(maxInput.value);
+  min = parseInt(minInput.value);
+  customGame();
+  // TODO: remove log
   console.log(randomNumber);
-  randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  // main();
-  console.log('max value');
-  console.log(maxInput.value);
 });
 
 // BUG: set max and min maybe wit default
