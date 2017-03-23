@@ -21,21 +21,27 @@ $borderTest: 1px solid black;
 $maxWidth : 100%;
 
 // ============ Animations ============
+// Setting icon
 @keyframes rotateIcon {
   80%  { transform: rotate(-360deg); }
   100% { transform: rotate(720deg); }
 }
-
+// Indicator text
 @keyframes twinkle {
   0%   { color: white; }
   50%  { color: $mainMagenta; }
   100% { color: white; }
 }
+// Input Outline
+@keyframes outlineColor {
+  0%   { border-color: $inputColor; }
+  50%  { border-color: $mainMagenta; }
+  100% { border-color: $inputColor; }
+}
 
 // ============ Setup ============
 body {
   font-family: 'Open Sans', sans-serif;
-  // font-size: 150%;
   margin: 0;
 }
 
@@ -44,7 +50,9 @@ body {
   animation: twinkle 3s infinite;
 }
 
-
+.outlineColor {
+  animation: outlineColor 1s infinite;
+}
 
 // ============ Header ============
 header {
