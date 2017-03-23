@@ -1,13 +1,7 @@
 // TODO: alphabetical sort
 // TODO: color refactoring
-// TODO: max min inputs and container
-// TODO: enable buttons check deisable estate color
 // TODO: responsive
-// TODO: paragraph margins
 // TODO: animate emoji
-// BUG: last guess size decreases when main runs
-// TODO: renmae classes
-
 
 // ============ Colors ============
 // Header
@@ -68,7 +62,7 @@ h1 {
   font-size: 350%;
   font-weight: 300;
   margin: 8px auto;
-  max-width: 50%;            // TODO: media query for short
+  max-width: 50%;
   span {
     color: $headerMagenta;
     font-weight: 700;
@@ -135,7 +129,7 @@ form {
   margin-top: 20px;
   width: 45%;
   &:focus {
-    background-color: $btnEnable;   // TODO: disabled
+    background-color: $btnEnable;
     outline: 0;
   }
   &:hover {
@@ -168,7 +162,7 @@ form {
   max-width: 75%;
 }
 
-.text-container {
+section {
   height: 350px;
   margin: 20px auto;
   max-width: 35%;
@@ -226,3 +220,6 @@ form {
   font-weight: 700;
   opacity: 0.8;
 }
+
+
+// ============ Media Query ============

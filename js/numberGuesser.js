@@ -140,6 +140,7 @@ function getRandomInt(maxVal, minVal) {
   return Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
 }
 
+// Renders Emoji based on type
 function loadEmoji(type) {
   // Emojis Arrays
   var errorEmojis = [
@@ -227,22 +228,9 @@ settingsBtn.addEventListener('click', function(event) {       // Setting Button 
 // TODO: clear button disabled
 // TODO: rest button disabled
 
-//phase 4
-// TODO: 2 player
-// TODO: Scoring based on time
-// TODO: Game to teach basic arithmetic to kids
-// TODO: Update UI
-
 //Important!
 // TODO: Responsive CSS
-// TODO: Aria and Accesibility
-// TODO: HTML semantics
-// TODO: HTML tags
-// TODO: id names
 
 //other
 // TODO: emoji win Animations
 // TODO: lives functionality
-// TODO: lose game event
-// TODO: hearts lose lives
-// TODO: hearts animations

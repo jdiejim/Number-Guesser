@@ -15,28 +15,28 @@
           <input id="guessInput" type="number" name="" value="" placeholder="Enter your guess">
           <input id="settingsBtn" type="button" name="" value="">
           <p id="error-msg"></p>
-          <button id="guessBtn" class="btn-global" type="button" name="button">Guess</button>
-          <button id="clearBtn" class="btn-global" type="button" name="button">Clear</button>
-        <div id="range-container" role="range input container">
-          <div class="range-input-container">
-            <label for="minInput">Min</label>
-            <input id="minInput" class="range-input" type="number" name="" value="" placeholder="0">
+          <button id="guessBtn" class="btn-global" type="button" name="guess-button">Guess</button>
+          <button id="clearBtn" class="btn-global" type="button" name="clear-button">Clear</button>
+        <div id="range-container" role="range-input group">
+          <div class="range-input-container" role="min-input">
+            <label for="min-input">Min</label>
+            <input id="minInput" class="range-input" type="number" name="min-input" value="" placeholder="0">
           </div>
-          <div class="range-input-container">
-            <label for="maxInput">Max</label>
-            <input id="maxInput" class="range-input" type="number" name="" value="" placeholder="1">
+          <div class="range-input-container" role="max-input">
+            <label for="max-input">Max</label>
+            <input id="maxInput" class="range-input" type="number" name="max-input" value="" placeholder="1">
           </div>
-          <button id="setRangeBtn" class="btn-global" type="button" name="button">Set</button>
+          <button id="setRangeBtn" class="btn-global" type="button" name="set-range-button">Set</button>
         </div>
       </form>
-      <div class="text-container">
-        <p id="new-ranges"></p>
+      <section>
         <p id="indicator">Your last guess was</p>
+        <p id="new-ranges"></p>
         <h2 id="last-guess"></h2>
         <h2 id="emoji-element"></h2>
         <p id="feedback">Click Guess to START!</p>
-        <button id="resetBtn" class="btn-global" type="button" name="button">Reset</button>
-      </div>
+        <button id="resetBtn" class="btn-global" type="button" name="reset-button">Reset</button>
+      </section>
     </main>
 
   <!-- Scripts -->
