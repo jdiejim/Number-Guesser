@@ -19,6 +19,7 @@ var setRangeBtn = document.getElementById('setRangeBtn');
 // --Elements--
 var errorMsg = document.getElementById('error-msg');
 var feedback = document.getElementById('feedback');
+var indicator = document.getElementById('indicator');
 var lastGuess = document.getElementById('last-guess');
 var rangeContainer = document.getElementById('range-container');
 
@@ -32,21 +33,25 @@ setupGame();
 function main() {
   console.log(randomNumber);
   var guess = parseInt(guessInput.value);
+  errorMsg.innerText = "";
+  indicator.innerText = "Your last guess was";
   lastGuess.innerText = guess;
 
 // --Error Filter--
 // TODO: out of range function toggle on and off; reset emoji
 
-// TODO: error functions should render bad emoji and feedback should update
-  if (guess > max || guess < min) {
-    errorMsg.innerText = "Out of range! Please enter number between " + min + " - " + max;
+  if (guess > max || guess < min || isNaN(guess)) {
+    errorMsg.innerText = "Please enter a number between " + min + " and " + max;
+    feedback.innerText = "Please enter a Number";
+    indicator.innerText = "Boo! Not Cool";
+    loadEmoji('error');
   }
 
-  if (isNaN(guess)) {
-    loadEmoji('error');
-    feedback.innerText = "Please enter a numeric value";
-    console.log('error');
-  }
+  // if (isNaN(guess)) {
+  //   errorMsg.innerText = "Please enter a number between " + min + " and " + max;
+  //   loadEmoji('error');
+  //   feedback.innerText = "Please enter a Number";
+  // }
 
 // --Game--
   if (guess > randomNumber) {
@@ -81,6 +86,7 @@ function setupGame() {
   // --Update DOM Element Data--
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
+  indicator.innerText = "Good Luck!";
   maxInput.value = max;
   minInput.value = min;
   // --Set Attribute for Defined Range Inputs--
@@ -100,6 +106,7 @@ function levelUp() {
   // --Update DOM Element Data--
   feedback.innerText = "BOOM!";
   guessInput.value = "";
+  indicator.innerText = "Awesome! Get ready for level " + level + "!";
   maxInput.value = max;
   minInput.value = min;
   // --Update Attribute for Defined Range Inputs--
@@ -108,15 +115,14 @@ function levelUp() {
 
   // TODO: remove logs
   console.log(randomNumber);
-  console.log(max);
-  console.log(min);
+
 }
 
 function loadEmoji(type) {
   // --Emoji Types--
   var errorEmojis = ['(ಥ﹏ಥ)', 'ಥ_ಥ', '༼ つ ◕_◕ ༽つ', 'ლ(ಠ益ಠლ)', '༼ つ ಥ_ಥ ༽つ'];
   var startEmojis = ["(ง'̀-'́)ง", '(◕‿◕✿)', '(¬‿¬)', '╚(ಠ_ಠ)=┐', '(｡◕‿◕｡)'];
-  var winEmojis = ['(~˘▾˘)~', '~(˘▾˘~)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', '(づ｡◕‿‿◕｡)づ', '♥‿♥' ];
+  var winEmojis = ['(~˘▾˘)~', '~(˘▾˘~)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', 'ヾ(⌐■_■)ノ♪', '♥‿♥' ];
   // --Generate Random Emoji Based on Type--
   var randEmoji = getRandomInt(-1, 5);
   switch (type) {
@@ -138,7 +144,6 @@ function loadEmoji(type) {
 function getRandomInt(max, min) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 
 // ============ Events ============
 guessBtn.addEventListener('click', main);
