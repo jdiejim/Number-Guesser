@@ -52,23 +52,11 @@ body {
 
 // ============ Global Classes ============
 // TODO: check if removed
-.input-container {
-  position: relative;
-}
+// .input-container {
+//   position: relative;
+// }
 
-.btn-global {
-  background-color: $btnDisabled;
-  border-radius: 10px;
-  border-style: none;
-  color: $btnText;
-  font-weight: 300;
-  &:focus {
-    background-color: $btnEnable;
-  }
-  &:hover {
-    background-color: $btnMagenta;
-  }
-}
+
 
 .spark {
   animation: twinkle 3s infinite;
@@ -76,20 +64,9 @@ body {
 
 // TODO: rearrage
 
-.range-input {
-  width: 10%;
-}
 
-label {
-  font-size: 80%;
-}
 
 // ============ ID ============
-#guessInput {
-  border: 1px solid $inputColor;
-  padding: 5px;
-  width: 59%;
-}
 
 #last-guess {
   color: $mainMagenta;
@@ -102,33 +79,8 @@ label {
   width: 59%;
 }
 
-#error-msg {
-  color: $mainMagenta;
-  font-size: 12px;
-  font-weight: 700;
-}
 
-#settingsBtn {
-  background: url(/assets/settings.svg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  border: none;
-  height: 20px;
-  margin-left: 5px;
-  margin-top: 10px;
-  padding: 5px;
-  width: 20px;
-  &:hover {
-    animation: rotateIcon 2s;
-  }
-  &:focus {
-    outline: 0;
-  }
-}
 
-#range-container {
-  display: none;
-}
 
 #setRangeBtn {
   display: block;
@@ -146,8 +98,6 @@ label {
 header {
   background-color: $headerBg;
   border: $borderTest;                // TODO: eliminate
-  // margin: 0 auto;                     // TODO: eliminate
-  max-width: $maxWidth;
   text-align: center;
 }
 
@@ -165,16 +115,14 @@ h1 {
 
 // ============ Main ============
 main {
+  border: $borderTest;     // TODO: eliminate
   color: $mainText;
-  margin: 0 auto;
-  max-width: $maxWidth;
   text-align: center;
-  border: $borderTest;
 }
-
 form {
-  margin: 10px auto;
-  width: 100%;
+  margin: 20px auto;
+  max-width: 35%;
+  position: relative;
   button {
     font-size: 16px;
     margin: 10px;
@@ -182,7 +130,91 @@ form {
   }
 }
 
+#guessInput {
+  border: 1px solid $inputColor;
+  color: $inputColor;
+  font-size: 180%;
+  font-weight: lighter;
+  height: 35px;
+  margin: 10px auto 0px;;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  width: 97%;
+}
+
+#settingsBtn {
+  border: none;
+  background: url(/assets/settings.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 42px;
+  margin-top: 10px;
+  position: absolute;
+    top: 0;
+    right: -45px;
+  width: 40px;
+  &:hover {
+    animation: rotateIcon 2s;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+#error-msg {
+  color: $mainMagenta;
+  font-size: 105%;
+  font-weight: 700;
+  margin: 5px auto;
+  width: 80%;
+}
+
+.btn-global {
+  background-color: $btnDisabled;
+  border-radius: 20px;
+  border-style: none;
+  color: $btnText;
+  font-size: 180%;
+  font-weight: lighter;
+  margin-top: 20px;
+  width: 45%;
+  &:focus {
+    background-color: $btnEnable;   // TODO: disabled
+    outline: 0;
+  }
+  &:hover {
+    background-color: $btnMagenta;
+  }
+}
+
+#range-container {
+  display: none;
+}
+
+.range-input-container {
+  display: inline-block;
+  width: 45%;
+  label {
+    font-size: 130%;
+  }
+}
+
+.range-input {
+  border: 1px solid $inputColor;
+  color: $inputColor;
+  display: block;
+  font-size: 140%;
+  font-weight: lighter;
+  height: 35px;
+  margin: 5px auto;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  max-width: 75%;
+}
+
+
+
 p {
-  margin: 20px 0px;
-  border: $borderTest;
+  // margin: 20px 0px;
+  // border: $borderTest;
 }

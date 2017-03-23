@@ -14,33 +14,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0; }
 
-.input-container {
-  position: relative; }
-
-.btn-global {
-  background-color: #D0D2D3;
-  border-radius: 10px;
-  border-style: none;
-  color: #FFFFFF;
-  font-weight: 300; }
-  .btn-global:focus {
-    background-color: #929497; }
-  .btn-global:hover {
-    background-color: #EB008B; }
-
 .spark {
   animation: twinkle 3s infinite; }
-
-.range-input {
-  width: 10%; }
-
-label {
-  font-size: 80%; }
-
-#guessInput {
-  border: 1px solid #D0D2D3;
-  padding: 5px;
-  width: 59%; }
 
 #last-guess {
   color: #EB008B;
@@ -50,29 +25,6 @@ label {
   margin-top: 10px;
   font-size: 18px;
   width: 59%; }
-
-#error-msg {
-  color: #EB008B;
-  font-size: 12px;
-  font-weight: 700; }
-
-#settingsBtn {
-  background: url(/assets/settings.svg) no-repeat;
-  background-position: center;
-  background-size: cover;
-  border: none;
-  height: 20px;
-  margin-left: 5px;
-  margin-top: 10px;
-  padding: 5px;
-  width: 20px; }
-  #settingsBtn:hover {
-    animation: rotateIcon 2s; }
-  #settingsBtn:focus {
-    outline: 0; }
-
-#range-container {
-  display: none; }
 
 #setRangeBtn {
   display: block;
@@ -87,7 +39,6 @@ label {
 header {
   background-color: #404041;
   border: 1px solid black;
-  max-width: 100%;
   text-align: center; }
 
 h1 {
@@ -101,22 +52,87 @@ h1 {
     font-weight: 700; }
 
 main {
+  border: 1px solid black;
   color: #404041;
-  margin: 0 auto;
-  max-width: 100%;
-  text-align: center;
-  border: 1px solid black; }
+  text-align: center; }
 
 form {
-  margin: 10px auto;
-  width: 100%; }
+  margin: 20px auto;
+  max-width: 35%;
+  position: relative; }
   form button {
     font-size: 16px;
     margin: 10px;
     min-width: 100px; }
 
-p {
-  margin: 20px 0px;
-  border: 1px solid black; }
+#guessInput {
+  border: 1px solid #D0D2D3;
+  color: #D0D2D3;
+  font-size: 180%;
+  font-weight: lighter;
+  height: 35px;
+  margin: 10px auto 0px;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  width: 97%; }
+
+#settingsBtn {
+  border: none;
+  background: url(/assets/settings.svg) no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 42px;
+  margin-top: 10px;
+  position: absolute;
+  top: 0;
+  right: -45px;
+  width: 40px; }
+  #settingsBtn:hover {
+    animation: rotateIcon 2s; }
+  #settingsBtn:focus {
+    outline: 0; }
+
+#error-msg {
+  color: #EB008B;
+  font-size: 105%;
+  font-weight: 700;
+  margin: 5px auto;
+  width: 80%; }
+
+.btn-global {
+  background-color: #D0D2D3;
+  border-radius: 20px;
+  border-style: none;
+  color: #FFFFFF;
+  font-size: 180%;
+  font-weight: lighter;
+  margin-top: 20px;
+  width: 45%; }
+  .btn-global:focus {
+    background-color: #929497;
+    outline: 0; }
+  .btn-global:hover {
+    background-color: #EB008B; }
+
+#range-container {
+  display: none; }
+
+.range-input-container {
+  display: inline-block;
+  width: 45%; }
+  .range-input-container label {
+    font-size: 130%; }
+
+.range-input {
+  border: 1px solid #D0D2D3;
+  color: #D0D2D3;
+  display: block;
+  font-size: 140%;
+  font-weight: lighter;
+  height: 35px;
+  margin: 5px auto;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  max-width: 75%; }
 
 /*# sourceMappingURL=style.css.map */

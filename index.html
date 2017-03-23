@@ -15,15 +15,17 @@
           <input id="guessInput" type="number" name="" value="" placeholder="Enter your guess">
           <input id="settingsBtn" type="button" name="" value="">
           <p id="error-msg"></p>
-        <div class="" role="container for buttons">
           <button id="guessBtn" class="btn-global" type="button" name="button">Guess</button>
           <button id="clearBtn" class="btn-global" type="button" name="button">Clear</button>
-        </div>
         <div id="range-container" role="range input container">
-          <label for="minInput">Min</label>
-          <input id="minInput" class="range-input" type="number" name="" value="" placeholder="0">
-          <label for="maxInput">Max</label>
-          <input id="maxInput" class="range-input" type="number" name="" value="" placeholder="1">
+          <div class="range-input-container">
+            <label for="minInput">Min</label>
+            <input id="minInput" class="range-input" type="number" name="" value="" placeholder="0">
+          </div>
+          <div class="range-input-container">
+            <label for="maxInput">Max</label>
+            <input id="maxInput" class="range-input" type="number" name="" value="" placeholder="1">
+          </div>
           <button id="setRangeBtn" class="btn-global" type="button" name="button">Set</button>
         </div>
       </form>

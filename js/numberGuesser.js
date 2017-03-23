@@ -41,7 +41,7 @@ function main() {
 
 // Error filter
   if (guess > max || guess < min || isNaN(guess)) {
-    errorMsg.innerText = "Please enter a number between " + min + " and " + max;  // Displays error message to user
+    errorMsg.innerText = "Please enter a number \n between " + min + " and " + max;  // Displays error message to user
     feedback.innerText = "Please enter a Number";                                 // Feedback element asks user for new input
     indicator.innerText = "Boo! Not Cool";                                        // Indicator alerts message to user
     loadEmoji('error');                                                           // Renders emoji of type error
