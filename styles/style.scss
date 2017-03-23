@@ -60,7 +60,6 @@ body {
 // ============ Header ============
 header {
   background-color: $headerBg;
-  border: $borderTest;                // TODO: eliminate
   text-align: center;
 }
 
@@ -169,8 +168,7 @@ form {
   max-width: 75%;
 }
 
-section {
-  border: $borderTest;
+.text-container {
   height: 350px;
   margin: 20px auto;
   max-width: 35%;
@@ -178,24 +176,31 @@ section {
   position: relative;
   text-align: center;
   p {
-    border: $borderTest;
     font-size: 130%;
-    margin: 0;
   }
 }
 
+#indicator {
+  margin-top: 22px;
+}
+
 #last-guess {
-  background-color: blue;
   color: $mainMagenta;
-  text-align: center;
-  margin: 0;
+  font-size: 200px;
+  font-weight: 300;
   position: absolute;
-    top: 25%;
-    left: 25%;
-  // margin-top: 100px;
-  // font-size: 20vw;
-  // height: 60%;
-  // position: absolute;
+    top: -36%;
+    left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#emoji-element {
+  color: $mainMagenta;
+  font-size: 322%;
+  position: absolute;
+  top: 25%;
+  left: 0;
   width: 100%;
 }
 
@@ -214,14 +219,6 @@ section {
     left: 0;
   width: 100%;
 }
-
-
-
-//
-// #setRangeBtn {
-//   display: block;
-//   margin: 10px auto;
-// }
 
 #new-ranges {
   color: $mainMagenta;

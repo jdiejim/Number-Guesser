@@ -17,6 +17,7 @@ var guessBtn = document.getElementById('guessBtn');
 var resetBtn = document.getElementById('resetBtn');
 var setRangeBtn = document.getElementById('setRangeBtn');
 // Elements
+var emojiElement = document.getElementById('emoji-element');
 var errorMsg = document.getElementById('error-msg');
 var feedback = document.getElementById('feedback');
 var indicator = document.getElementById('indicator');
@@ -37,6 +38,7 @@ function main() {
   errorMsg.innerText = "";                        // Removes text in error message
   indicator.innerText = "Your last guess was";    // Indicator default text
   lastGuess.innerText = guess;                    // Element displays last guess
+  emojiElement.innerText = "";
   newRanges.className = "";                       // Removes animation from new ranges element
   newRanges.innerText = "";                       // Removes text from new ranges element
 
@@ -162,18 +164,19 @@ function loadEmoji(type) {
     '♥‿♥'
   ];
   var randEmoji = getRandomInt(-1, 5);                // Generates random index for array
+  lastGuess.innerText = "";
   switch (type) {                                     // Selects emoji based on type parameter and random index
     case 'error':
-      lastGuess.innerText = errorEmojis[randEmoji];
+      emojiElement.innerText = errorEmojis[randEmoji];
       break;
     case 'win':
-      lastGuess.innerText = winEmojis[randEmoji];
+      emojiElement.innerText = winEmojis[randEmoji];
       break;
     case 'start':
-      lastGuess.innerText = startEmojis[randEmoji];
+      emojiElement.innerText = startEmojis[randEmoji];
       break;
     default:
-      lastGuess.innerText = startEmojis[randEmoji];
+      emojiElement.innerText = startEmojis[randEmoji];
   }
 }
 
