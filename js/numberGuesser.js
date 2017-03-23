@@ -218,8 +218,3 @@ settingsBtn.addEventListener('click', function(event) {       // Setting Button 
     settingsVisibility = true;
   }
 });
-
-
-//phase 2
-// TODO: clear button disabled
-// TODO: rest button disabled
