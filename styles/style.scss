@@ -59,6 +59,9 @@ body {
   &:hover {
     background-color: $btnMagenta;
   }
+  &:disabled {
+    background-color: $btnDisabled;
+  }
 }
 
 .outlineColor {

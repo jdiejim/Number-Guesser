@@ -44,11 +44,11 @@ function main() {
 
 // Error filter
   if (guess > max || guess < min || isNaN(guess)) {
-    errorMsg.innerText = "Please enter a number \n between " + min + " and " + max;  // Displays error message to user
-    guessInput.className += "outlineColor";
-    feedback.innerText = "Please enter a Number";                                 // Feedback element asks user for new input
-    indicator.innerText = "Boo! Not Cool";                                        // Indicator alerts message to user
-    loadEmoji('error');                                                           // Renders emoji of type error
+    errorMsg.innerText = "Please enter a number \n between " + min + " and " + max; // Displays error message to user
+    guessInput.className += "outlineColor";                                         // Adds animation to guess input
+    feedback.innerText = "Please enter a Number";                                   // Feedback element asks user for new input
+    indicator.innerText = "Boo! Not Cool";                                          // Indicator alerts message to user
+    loadEmoji('error');                                                             // Renders emoji of type error
   }
 
 // Guess Number Comparison
@@ -186,17 +186,24 @@ function loadEmoji(type) {
 
 // ================ Events ==================
 
+// Clear btn
 clearBtn.addEventListener('click', function () {              // Clear Button Event: clears value andanimation in guess input and error msg if exists
-  errorMsg.innerText = "";
-  guessInput.className = "";
-  guessInput.value = "";
+  if (guessInput.value === "") {
+    clearBtn.disable = true;
+  } else {
+    errorMsg.innerText = "";
+    guessInput.className = "";
+    guessInput.value = "";
+  }
 });
 
+// Guess btn
 guessBtn.addEventListener('click', function() {              // Guess Button Event: triggers main() to start game
   guessInput.className = "";                                 // Removes error animation if it exsists
   main();
 });
 
+// Guess Input
 guessInput.addEventListener('keyup', function(event) {        // Overides Enter/Esc Key default functionality
   if (event.keyCode == 13) {
     event.preventDefault();                                   // Overides Enter Key default functionality
@@ -207,14 +214,17 @@ guessInput.addEventListener('keyup', function(event) {        // Overides Enter/
   }
 });
 
+// Reset btn
 resetBtn.addEventListener('click', setupGame);                // Reset Button Event: set up new game with default environment
 
+// Set Range btn
 setRangeBtn.addEventListener('click', function(event) {       // Range Button Event: triggers custom Game Environment with defined input ranges
   max = parseInt(maxInput.value);
   min = parseInt(minInput.value);
   customGame();
 });
 
+// Setting btn
 settingsBtn.addEventListener('click', function(event) {       // Setting Button Event: Toggles element style display property to hide range container
   event.preventDefault();
   if (settingsVisibility) {
