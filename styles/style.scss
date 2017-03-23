@@ -6,31 +6,32 @@
 // TODO: paragraph margins
 // TODO: animate emoji
 // BUG: last guess size decreases when main runs
+// TODO: renmae classes
 
 
-// ------------ Colors ------------
-// --header--
+// ============ Colors ============
+// Header
 $headerBg: #404041;
 $headerMagenta: #ED458B;
 $headerWhite: #E6E7E8;
-// --button--
+// Button
 $btnDisabled: #D0D2D3;
-$btnMagenta: #EB008B;
 $btnEnable: #929497;
+$btnMagenta: #EB008B;
 $btnText: #FFFFFF;
-// --input--
+// Input
 $inputColor: #D0D2D3;
-// --text--
-$mainText: #404041;
+// Text
 $mainMagenta: #EB008B;
+$mainText: #404041;
 
+// test
 $borderTest: 0px solid black;
 
-// ------------ Measures ------------
+// ============ Measurements ============
 $maxWidth : 75%;
 
-// TODO: emoji win animation
-// ------------ Animations ------------
+// ============ Animations ============
 @keyframes rotateIcon {
   80%  { transform: rotate(-360deg); }
   100% { transform: rotate(720deg); }
@@ -42,16 +43,15 @@ $maxWidth : 75%;
   100% { color: white; }
 }
 
-// ------------ Setup ------------
+// ============ Setup ============
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 150%;
   margin: 0;
 }
 
-// ------------ Global Classes ------------
-
-// TODO: check if removed better
+// ============ Global Classes ============
+// TODO: check if removed
 .input-container {
   position: relative;
 }
@@ -84,50 +84,7 @@ label {
   font-size: 80%;
 }
 
-// ------------ Header ------------
-header {
-  background-color: $headerBg;
-  margin: 0 auto;
-  max-width: $maxWidth;
-  text-align: center;
-}
-
-h1 {
-  font-weight: 300;
-  color: $headerWhite;
-  margin: 0;
-  span {
-    color: $headerMagenta;
-    font-weight: 700;
-  }
-}
-
-// ------------ Main ------------
-main {
-  color: $mainText;
-  margin: 0 auto;
-  max-width: $maxWidth;
-  text-align: center;
-  border: $borderTest;
-}
-
-form {
-  margin: 10px auto;
-  width: 100%;
-  button {
-    font-size: 16px;
-    margin: 10px;
-    min-width: 100px;
-  }
-}
-
-p {
-  margin: 20px 0px;
-  border: $borderTest;
-}
-
-// ------------ Id ------------
-
+// ============ ID ============
 #guessInput {
   border: 1px solid $inputColor;
   padding: 5px;
@@ -183,4 +140,46 @@ p {
   font-size: 15px;
   font-weight: 700;
   opacity: 0.8;
+}
+
+// ============ Header ============
+header {
+  background-color: $headerBg;
+  margin: 0 auto;
+  max-width: $maxWidth;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+  color: $headerWhite;
+  margin: 0;
+  span {
+    color: $headerMagenta;
+    font-weight: 700;
+  }
+}
+
+// ============ Main ============
+main {
+  color: $mainText;
+  margin: 0 auto;
+  max-width: $maxWidth;
+  text-align: center;
+  border: $borderTest;
+}
+
+form {
+  margin: 10px auto;
+  width: 100%;
+  button {
+    font-size: 16px;
+    margin: 10px;
+    min-width: 100px;
+  }
+}
+
+p {
+  margin: 20px 0px;
+  border: $borderTest;
 }

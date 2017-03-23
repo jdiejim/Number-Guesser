@@ -38,39 +38,6 @@ body {
 label {
   font-size: 80%; }
 
-header {
-  background-color: #404041;
-  margin: 0 auto;
-  max-width: 75%;
-  text-align: center; }
-
-h1 {
-  font-weight: 300;
-  color: #E6E7E8;
-  margin: 0; }
-  h1 span {
-    color: #ED458B;
-    font-weight: 700; }
-
-main {
-  color: #404041;
-  margin: 0 auto;
-  max-width: 75%;
-  text-align: center;
-  border: 0px solid black; }
-
-form {
-  margin: 10px auto;
-  width: 100%; }
-  form button {
-    font-size: 16px;
-    margin: 10px;
-    min-width: 100px; }
-
-p {
-  margin: 20px 0px;
-  border: 0px solid black; }
-
 #guessInput {
   border: 1px solid #D0D2D3;
   padding: 5px;
@@ -117,5 +84,38 @@ p {
   font-size: 15px;
   font-weight: 700;
   opacity: 0.8; }
+
+header {
+  background-color: #404041;
+  margin: 0 auto;
+  max-width: 75%;
+  text-align: center; }
+
+h1 {
+  font-weight: 300;
+  color: #E6E7E8;
+  margin: 0; }
+  h1 span {
+    color: #ED458B;
+    font-weight: 700; }
+
+main {
+  color: #404041;
+  margin: 0 auto;
+  max-width: 75%;
+  text-align: center;
+  border: 0px solid black; }
+
+form {
+  margin: 10px auto;
+  width: 100%; }
+  form button {
+    font-size: 16px;
+    margin: 10px;
+    min-width: 100px; }
+
+p {
+  margin: 20px 0px;
+  border: 0px solid black; }
 
 /*# sourceMappingURL=style.css.map */

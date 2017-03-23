@@ -101,7 +101,7 @@ function levelUp() {
   guessInput.value = "";
   indicator.innerText = "Awesome! Get Ready!";
   newRanges.className += "spark";                                                         // Adds animation to new ranges element
-  newRanges.innerText = "Level " + level + ":   Guess between " + min + " and " + max;    // Updates new ranges element text
+  newRanges.innerText = "Level " + level + ":   Guess between " + min + " and " + max + "\n Click Guess Button to start";    // Updates new ranges element text
   maxInput.value = max;                                                                   // Sets max Input value to new max range
   minInput.value = min;                                                                   // Sets min Input value to new min range
 
