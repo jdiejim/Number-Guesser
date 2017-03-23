@@ -1,22 +1,22 @@
 // ============ Global Variables ============
-// --Game Environment--
+// Game Environment
 var level;
 var lives;
 var max;
 var min;
 var randomNumber;
 var settingsVisibility;
-// --Inputs--
+// Inputs
+var guessInput = document.getElementById('guessInput');
 var maxInput = document.getElementById('maxInput');
 var minInput = document.getElementById('minInput');
-var guessInput = document.getElementById('guessInput');
 var settingsBtn = document.getElementById('settingsBtn');
-// --Buttons--
-var guessBtn = document.getElementById('guessBtn');
+// Buttons
 var clearBtn = document.getElementById('clearBtn');
+var guessBtn = document.getElementById('guessBtn');
 var resetBtn = document.getElementById('resetBtn');
 var setRangeBtn = document.getElementById('setRangeBtn');
-// --Elements--
+// Elements
 var errorMsg = document.getElementById('error-msg');
 var feedback = document.getElementById('feedback');
 var indicator = document.getElementById('indicator');
@@ -24,126 +24,143 @@ var lastGuess = document.getElementById('last-guess');
 var newRanges = document.getElementById('new-ranges');
 var rangeContainer = document.getElementById('range-container');
 
-// TODO: rearange main
+// ================= Main ===================
 
-// ============ Main ============
-// ** Run Setup Game Environment **
-setupGame();
+setupGame();          // Setup Game Environment to default values
 
-// ** Main Game Function **
+// Main Function checks for errors and starts game
 function main() {
-  console.log(randomNumber);
-  // --Get Guess Number--
-  var guess = parseInt(guessInput.value);
-  // --Update DOM Element Data--
-  errorMsg.innerText = "";
-  indicator.innerText = "Your last guess was";
-  lastGuess.innerText = guess;
-  newRanges.className = "";
-  newRanges.innerText = "";
+  var guess = parseInt(guessInput.value);         // Gets value from guess input
 
-// --Error Checker--
+  // Update DOM Element Data
+  errorMsg.innerText = "";                        // Removes text in error message
+  indicator.innerText = "Your last guess was";    // Indicator default text
+  lastGuess.innerText = guess;                    // Element displays last guess
+  newRanges.className = "";                       // Removes animation from new ranges element
+  newRanges.innerText = "";                       // Removes text from new ranges element
+
+// Error filter
   if (guess > max || guess < min || isNaN(guess)) {
-    errorMsg.innerText = "Please enter a number between " + min + " and " + max;
-    feedback.innerText = "Please enter a Number";
-    indicator.innerText = "Boo! Not Cool";
-    loadEmoji('error');
+    errorMsg.innerText = "Please enter a number between " + min + " and " + max;  // Displays error message to user
+    feedback.innerText = "Please enter a Number";                                 // Feedback element asks user for new input
+    indicator.innerText = "Boo! Not Cool";                                        // Indicator alerts message to user
+    loadEmoji('error');                                                           // Renders emoji of type error
   }
 
-// --Guess Number Comparison--
+// Guess Number Comparison
   if (guess > randomNumber) {
-    feedback.innerText = "That is too high";
+    feedback.innerText = "That is too high";          // Updates feedback with meesage
     lives -= 1;
   }
   if (guess < randomNumber) {
-    feedback.innerText = "That is too low";
+    feedback.innerText = "That is too low";           // Updates feedback with meesage
     lives -= 1;
   }
   if (guess === randomNumber) {
-    levelUp();
+    levelUp();                                        // Setup for next level environment
   }
 }
 
-// ============ Functions ============
-// TODO: sort alpha names
-// ** Setup Game Environment **
+// =============== Functions =================
+
+// Default Setup for Game Environment
 function setupGame() {
-  // --Game Environment--
-  level = 1;
-  lives = 5;
-  max = 100;
-  min = 0;
-  randomNumber = getRandomInt(max, min);
-  settingsVisibility = false;
-  // --Render Start Emoji--
-  loadEmoji('start');
-  // --Update DOM Element Data--
+  level = 1;                              // Updates level to default value
+  lives = 5;                              // Updates lives to default value
+  max = 100;                              // Updates max range to default value
+  min = 0;                                // Updates min range to default value
+  randomNumber = getRandomInt(max, min);  // Generates random number with default ranges for round
+  settingsVisibility = false;             // Settings element not visible
+  loadEmoji('start');                     // Renders emoji of type start
+
+  // Update DOM Elements Data to default values
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
   indicator.innerText = "Good Luck!";
-  maxInput.value = 100;
-  minInput.value = 0;
-  newRanges.className = "";
+  maxInput.value = 100;                                                 // Sets max Input value to default range
+  minInput.value = 0;                                                   // Sets min Input value to default range
+  newRanges.className = "";                                             // Removes animation to new ranges element
   newRanges.innerText = "";
-  // --Set Attribute for Defined Range Inputs--
-  guessInput.setAttribute('max', 100);
-  guessInput.setAttribute('min', 0);
+
+  // Sets Attributes for Default Range Inputs
+  guessInput.setAttribute('max', 100);          // Sets attribute to default value
+  guessInput.setAttribute('min', 0);            // Sets attribute to default value
 }
 
+// Level Up Setup for Game Environment after User wins round
 function levelUp() {
-  // --Game Environment--
-  level += 1;
-  lives = 5;
-  max += 10;
-  min -= 10;
-  randomNumber = getRandomInt(max, min);
-  // --Render Win Emoji--
-  loadEmoji('win');
-  // --Update DOM Element Data--
+  level += 1;                               // Increases level of difficulty by 1
+  lives = 5;                                // Updates lives to default value
+  max += 10;                                // Increases max range by 10
+  min -= 10;                                // Reduces min range by 10
+  randomNumber = getRandomInt(max, min);    // Generates new random number with new ranges for round
+  loadEmoji('win');                         // Renders emoji of type win
+
+  // Update DOM Elements Data after user wind round
   feedback.innerText = "BOOM!";
   guessInput.value = "";
   indicator.innerText = "Awesome! Get Ready!";
-  newRanges.className += "spark";
-  newRanges.innerText = "Level " + level + ":   Guess between " + min + " and " + max;
-  maxInput.value = max;
-  minInput.value = min;
-  // --Update Attribute for Defined Range Inputs--
-  guessInput.setAttribute('max', max);
-  guessInput.setAttribute('min', min);
+  newRanges.className += "spark";                                                         // Adds animation to new ranges element
+  newRanges.innerText = "Level " + level + ":   Guess between " + min + " and " + max;    // Updates new ranges element text
+  maxInput.value = max;                                                                   // Sets max Input value to new max range
+  minInput.value = min;                                                                   // Sets min Input value to new min range
 
-  // TODO: remove logs
-  console.log(randomNumber);
+  // Sets Attributes for Updated Range Inputs
+  guessInput.setAttribute('max', max);        // Sets attribute to updated value
+  guessInput.setAttribute('min', min);        // Sets attribute to updated value
 }
 
+// Custom Setup for Game Environment after User defines ranges
 function customGame() {
-  // --Game Environment--
-  level = 1;
-  lives = 5;
-  randomNumber = getRandomInt(max, min);
-  settingsVisibility = false;
-  // --Render Start Emoji--
-  loadEmoji('start');
-  // --Update DOM Element Data--
+  level = 1;                                  // Updates level to default value
+  lives = 5;                                  // Updates lives to default value
+  randomNumber = getRandomInt(max, min);      // Generates random number with custom ranges for round
+  loadEmoji('start');                         // Renders emoji of type start
+
+  // Update DOM Element Data
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
   indicator.innerText = "Good Luck!";
-  maxInput.value = max;
-  minInput.value = min;
-  newRanges.className = "";
+  maxInput.value = max;                                                   // Sets max Input value to custom max range
+  minInput.value = min;                                                   // Sets min Input value to custom min range
+  newRanges.className = "";                                               // Removes animation to new ranges element
   newRanges.innerText = "";
-  // --Set Attribute for Defined Range Inputs--
-  guessInput.setAttribute('max', max);
-  guessInput.setAttribute('min', min);
+
+  // Set Attribute for Defined Range Inputs
+  guessInput.setAttribute('max', max);        // Sets attribute to custom value
+  guessInput.setAttribute('min', min);        // Sets attribute to custom value
+}
+
+// Generates random interger between two values inclusive
+function getRandomInt(maxVal, minVal) {
+  return Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
 }
 
 function loadEmoji(type) {
-  // --Emoji Types--
-  var errorEmojis = ['(ಥ﹏ಥ)', 'ಥ_ಥ', '༼ つ ◕_◕ ༽つ', 'ლ(ಠ益ಠლ)', '༼ つ ಥ_ಥ ༽つ'];
-  var startEmojis = ["(ง'̀-'́)ง", '(◕‿◕✿)', '(¬‿¬)', '╚(ಠ_ಠ)=┐', '(｡◕‿◕｡)'];
-  var winEmojis = ['(~˘▾˘)~', '~(˘▾˘~)', '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧', 'ヾ(⌐■_■)ノ♪', '♥‿♥' ];
-  // --Generate Random Emoji Based on Type--
-  var randEmoji = getRandomInt(-1, 5);
-  switch (type) {
+  // Emojis Arrays
+  var errorEmojis = [
+    '(ಥ﹏ಥ)',
+    'ಥ_ಥ',
+    '༼ つ ◕_◕ ༽つ',
+    'ლ(ಠ益ಠლ)',
+    '༼ つ ಥ_ಥ ༽つ'
+  ];
+  var startEmojis = [
+    "(ง'̀-'́)ง",
+    '(◕‿◕✿)',
+    '(¬‿¬)',
+    '╚(ಠ_ಠ)=┐',
+    '(｡◕‿◕｡)'
+  ];
+  var winEmojis = [
+    '(~˘▾˘)~',
+    '~(˘▾˘~)',
+    '(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧',
+    'ヾ(⌐■_■)ノ♪',
+    '♥‿♥'
+  ];
+  var randEmoji = getRandomInt(-1, 5);                // Generates random index for array
+  switch (type) {                                     // Selects emoji based on type parameter and random index
     case 'error':
       lastGuess.innerText = errorEmojis[randEmoji];
       break;
@@ -158,33 +175,33 @@ function loadEmoji(type) {
   }
 }
 
-// TODO: check random forumla
-function getRandomInt(maxVal, minVal) {
-  return Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
-}
+// ================ Events ==================
 
-// ============ Events ============
-guessBtn.addEventListener('click', main);
-
-clearBtn.addEventListener('click', function () {
+clearBtn.addEventListener('click', function () {              // Clear Button Event: clears value in guess input
   guessInput.value = "";
 });
 
-resetBtn.addEventListener('click', setupGame);
+guessBtn.addEventListener('click', main);                     // Guess Button Event: triggers main() to start game
 
-// --Enter Key Funcionality--
-guessInput.addEventListener('keyup', function(event) {
+guessInput.addEventListener('keyup', function(event) {        // Overides Enter/Esc Key default functionality
   if (event.keyCode == 13) {
-    event.preventDefault();
-    main();
+    event.preventDefault();                                   // Overides Enter Key default functionality
+    main();                                                   // Triggers main() to start game
   }
   if (event.keyCode == 27) {
-    guessInput.value = "";
+    guessInput.value = "";                                    // Esc Key clears value in guess input
   }
 });
 
-// --Toggle Input Range Container--
-settingsBtn.addEventListener('click', function(event) {
+resetBtn.addEventListener('click', setupGame);                // Reset Button Event: set up new game with default environment
+
+setRangeBtn.addEventListener('click', function(event) {       // Range Button Event: triggers custom Game Environment with defined input ranges
+  max = parseInt(maxInput.value);
+  min = parseInt(minInput.value);
+  customGame();
+});
+
+settingsBtn.addEventListener('click', function(event) {       // Setting Button Event: Toggles element style display property to hide range container
   event.preventDefault();
   if (settingsVisibility) {
     rangeContainer.style.display = 'none';
@@ -196,19 +213,31 @@ settingsBtn.addEventListener('click', function(event) {
   }
 });
 
-setRangeBtn.addEventListener('click', function(event) {
-  max = parseInt(maxInput.value);
-  min = parseInt(minInput.value);
-  customGame();
-  // TODO: remove log
-  console.log(randomNumber);
-});
 
-// TODO: emoji win animation
+
+//phase 1
+// TODO: README.md
+
+//phase 2
+// TODO: clear button disabled
+// TODO: rest button disabled
+
+//phase 4
+// TODO: 2 player
+// TODO: Scoring based on time
+// TODO: Game to teach basic arithmetic to kids
+// TODO: Update UI
+
+//Important!
+// TODO: Responsive CSS
+// TODO: Aria and Accesibility
+// TODO: HTML semantics
+// TODO: HTML tags
+// TODO: id names
+
+//other
+// TODO: emoji win Animations
+// TODO: lives functionality
 // TODO: lose game event
-// TODO: lives and lost emoji
 // TODO: hearts lose lives
-// TODO: scoring
-// TODO: 2players
-// TODO: create readme.md IMPORTAN!!!!!!!!!!!!!!!!!
-// TODO: disabled buttons
+// TODO: hearts animations
