@@ -1,8 +1,8 @@
 # Number Guesser
 ## Description
 Number Guesser is a game where the player has to guess a number between 1 and 100.
-If the player wins the round the level of difficulty increases.
-The game has two types of modes: normal and custom;
+If the player wins the, round the level of difficulty increases.
+The game has two types of modes: normal and custom.
 
 ## Instructions
 1. In the first round, the player guesses a number and types it in the text box.
