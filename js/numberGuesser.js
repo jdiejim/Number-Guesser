@@ -78,8 +78,8 @@ function setupGame() {
   loadEmoji('start');                     // Renders emoji of type start
 
   // Update DOM Elements Data to default values
-  guessInput.className = "";                                              // Removes error animation if any
   errorMsg.innerText = "";
+  guessInput.className = "";                                              // Removes error animation if any
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
   indicator.innerText = "Good Luck!";
@@ -124,8 +124,8 @@ function customGame() {
   loadEmoji('start');                         // Renders emoji of type start
 
   // Update DOM Element Data
-  guessInput.className = "";                                              // Removes error animation if any
   feedback.innerText = "Click Guess to START GAME!";
+  guessInput.className = "";                                              // Removes error animation if any
   guessInput.value = "";
   indicator.innerText = "Good Luck!";
   maxInput.value = max;                                                   // Sets max Input value to custom max range

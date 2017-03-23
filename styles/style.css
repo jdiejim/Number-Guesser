@@ -1,3 +1,10 @@
+@keyframes outlineColor {
+  0% {
+    border-color: #D0D2D3; }
+  50% {
+    border-color: #EB008B; }
+  100% {
+    border-color: #D0D2D3; } }
 @keyframes rotateIcon {
   80% {
     transform: rotate(-360deg); }
@@ -10,13 +17,6 @@
     color: #EB008B; }
   100% {
     color: white; } }
-@keyframes outlineColor {
-  0% {
-    border-color: #D0D2D3; }
-  50% {
-    border-color: #EB008B; }
-  100% {
-    border-color: #D0D2D3; } }
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0; }

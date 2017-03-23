@@ -18,6 +18,11 @@ $mainText: #404041;
 $maxWidth : 100%;
 
 // ============ Animations ============
+@keyframes outlineColor {
+  0%   { border-color: $inputColor; }
+  50%  { border-color: $mainMagenta; }
+  100% { border-color: $inputColor; }
+}
 // Setting icon
 @keyframes rotateIcon {
   80%  { transform: rotate(-360deg); }
@@ -28,12 +33,6 @@ $maxWidth : 100%;
   0%   { color: white; }
   50%  { color: $mainMagenta; }
   100% { color: white; }
-}
-// Input Outline
-@keyframes outlineColor {
-  0%   { border-color: $inputColor; }
-  50%  { border-color: $mainMagenta; }
-  100% { border-color: $inputColor; }
 }
 
 // ============ Setup ============
