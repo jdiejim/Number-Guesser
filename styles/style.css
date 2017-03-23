@@ -3,6 +3,13 @@
     transform: rotate(-360deg); }
   100% {
     transform: rotate(720deg); } }
+@keyframes twinkle {
+  0% {
+    color: white; }
+  50% {
+    color: #EB008B; }
+  100% {
+    color: white; } }
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 150%;
@@ -21,6 +28,9 @@ body {
     background-color: #929497; }
   .btn-global:hover {
     background-color: #EB008B; }
+
+.spark {
+  animation: twinkle 3s infinite; }
 
 .range-input {
   width: 10%; }
@@ -98,5 +108,11 @@ p {
 #setRangeBtn {
   display: block;
   margin: 10px auto; }
+
+#new-ranges {
+  color: #EB008B;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.8; }
 
 /*# sourceMappingURL=style.css.map */

@@ -21,6 +21,7 @@ var errorMsg = document.getElementById('error-msg');
 var feedback = document.getElementById('feedback');
 var indicator = document.getElementById('indicator');
 var lastGuess = document.getElementById('last-guess');
+var newRanges = document.getElementById('new-ranges');
 var rangeContainer = document.getElementById('range-container');
 
 // TODO: rearange main
@@ -32,14 +33,16 @@ setupGame();
 // ** Main Game Function **
 function main() {
   console.log(randomNumber);
+  // --Get Guess Number--
   var guess = parseInt(guessInput.value);
+  // --Update DOM Element Data--
   errorMsg.innerText = "";
   indicator.innerText = "Your last guess was";
   lastGuess.innerText = guess;
+  newRanges.className = "";
+  newRanges.innerText = "";
 
-// --Error Filter--
-// TODO: out of range function toggle on and off; reset emoji
-
+// --Error Checker--
   if (guess > max || guess < min || isNaN(guess)) {
     errorMsg.innerText = "Please enter a number between " + min + " and " + max;
     feedback.innerText = "Please enter a Number";
@@ -47,13 +50,7 @@ function main() {
     loadEmoji('error');
   }
 
-  // if (isNaN(guess)) {
-  //   errorMsg.innerText = "Please enter a number between " + min + " and " + max;
-  //   loadEmoji('error');
-  //   feedback.innerText = "Please enter a Number";
-  // }
-
-// --Game--
+// --Guess Number Comparison--
   if (guess > randomNumber) {
     feedback.innerText = "That is too high";
     lives -= 1;
@@ -64,14 +61,11 @@ function main() {
   }
   if (guess === randomNumber) {
     levelUp();
-    // TODO: add level msg
   }
 }
 
-// ---- Functions ----
+// ============ Functions ============
 // TODO: sort alpha names
-
-// TODO: figure how to make max and min disape
 // ** Setup Game Environment **
 function setupGame() {
   // --Game Environment--
@@ -106,7 +100,9 @@ function levelUp() {
   // --Update DOM Element Data--
   feedback.innerText = "BOOM!";
   guessInput.value = "";
-  indicator.innerText = "Awesome! Get ready for level " + level + "!";
+  indicator.innerText = "Awesome!";
+  newRanges.className += "spark";
+  newRanges.innerText = "New challenge! Level " + level + " Guess between " + min + " and " + max;
   maxInput.value = max;
   minInput.value = min;
   // --Update Attribute for Defined Range Inputs--

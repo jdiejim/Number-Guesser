@@ -28,8 +28,14 @@ $maxWidth : 75%;
 // TODO: emoji win animation
 // ------------ Animations ------------
 @keyframes rotateIcon {
-  80% { transform: rotate(-360deg); }
+  80%  { transform: rotate(-360deg); }
   100% { transform: rotate(720deg); }
+}
+
+@keyframes twinkle {
+  0%   { color: white; }
+  50%  { color: $mainMagenta; }
+  100% { color: white; }
 }
 
 // ------------ Setup ------------
@@ -60,10 +66,9 @@ body {
   }
 }
 
-// .hiddenClass {
-//   display: h
-// }
-
+.spark {
+  animation: twinkle 3s infinite;
+}
 
 // TODO: rearrage
 
@@ -164,4 +169,11 @@ p {
 #setRangeBtn {
   display: block;
   margin: 10px auto;
+}
+
+#new-ranges {
+  color: $mainMagenta;
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.8;
 }
