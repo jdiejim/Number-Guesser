@@ -14,9 +14,6 @@ $inputColor: #D0D2D3;
 $mainMagenta: #EB008B;
 $mainText: #404041;
 
-// test
-$borderTest: 1px solid black;
-
 // ============ Measurements ============
 $maxWidth : 100%;
 
@@ -46,12 +43,30 @@ body {
 }
 
 // ============ Global Classes ============
-.spark {
-  animation: twinkle 3s infinite;
+.btn-global {
+  background-color: $btnDisabled;
+  border-radius: 20px;
+  border-style: none;
+  color: $btnText;
+  font-size: 180%;
+  font-weight: lighter;
+  margin: 20px 10px;
+  width: 40%;
+  &:focus {
+    background-color: $btnEnable;
+    outline: 0;
+  }
+  &:hover {
+    background-color: $btnMagenta;
+  }
 }
 
 .outlineColor {
   animation: outlineColor 1s infinite;
+}
+
+.spark {
+  animation: twinkle 3s infinite;
 }
 
 // ============ Header ============
@@ -122,24 +137,6 @@ form {
   width: 80%;
 }
 
-.btn-global {
-  background-color: $btnDisabled;
-  border-radius: 20px;
-  border-style: none;
-  color: $btnText;
-  font-size: 180%;
-  font-weight: lighter;
-  margin-top: 20px;
-  width: 45%;
-  &:focus {
-    background-color: $btnEnable;
-    outline: 0;
-  }
-  &:hover {
-    background-color: $btnMagenta;
-  }
-}
-
 #range-container {
   display: none;
 }
@@ -167,7 +164,7 @@ form {
 
 section {
   height: 350px;
-  margin: 20px auto;
+  margin: -40px auto;
   max-width: 35%;
   padding-top: 20px;
   position: relative;
@@ -194,7 +191,7 @@ section {
 
 #emoji-element {
   color: $mainMagenta;
-  font-size: 322%;
+  font-size: 310%;
   position: absolute;
   top: 25%;
   left: 0;
@@ -237,6 +234,10 @@ section {
     font-size: 320%;
   }
 
+  #emoji-element {
+    font-size: 244%;
+  }
+
   #guessInput {
     font-size: 150%;
   }
@@ -246,6 +247,7 @@ section {
   }
 
   .btn-global {
-    font-size: 140%;
+    font-size: 130%;
+    width: 35%;
   }
 }

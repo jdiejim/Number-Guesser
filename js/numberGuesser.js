@@ -51,9 +51,6 @@ function main() {
     loadEmoji('error');                                                           // Renders emoji of type error
   }
 
-
-
-
 // Guess Number Comparison
   if (guess > randomNumber) {
     feedback.innerText = "That is too high";          // Updates feedback with meesage
@@ -81,6 +78,7 @@ function setupGame() {
   loadEmoji('start');                     // Renders emoji of type start
 
   // Update DOM Elements Data to default values
+  guessInput.className = "";                                              // Removes error animation if any
   errorMsg.innerText = "";
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
@@ -126,6 +124,7 @@ function customGame() {
   loadEmoji('start');                         // Renders emoji of type start
 
   // Update DOM Element Data
+  guessInput.className = "";                                              // Removes error animation if any
   feedback.innerText = "Click Guess to START GAME!";
   guessInput.value = "";
   indicator.innerText = "Good Luck!";
@@ -187,7 +186,9 @@ function loadEmoji(type) {
 
 // ================ Events ==================
 
-clearBtn.addEventListener('click', function () {              // Clear Button Event: clears value in guess input
+clearBtn.addEventListener('click', function () {              // Clear Button Event: clears value andanimation in guess input and error msg if exists
+  errorMsg.innerText = "";
+  guessInput.className = "";
   guessInput.value = "";
 });
 

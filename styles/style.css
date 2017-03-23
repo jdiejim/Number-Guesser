@@ -21,11 +21,26 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0; }
 
-.spark {
-  animation: twinkle 3s infinite; }
+.btn-global {
+  background-color: #D0D2D3;
+  border-radius: 20px;
+  border-style: none;
+  color: #FFFFFF;
+  font-size: 180%;
+  font-weight: lighter;
+  margin: 20px 10px;
+  width: 40%; }
+  .btn-global:focus {
+    background-color: #929497;
+    outline: 0; }
+  .btn-global:hover {
+    background-color: #EB008B; }
 
 .outlineColor {
   animation: outlineColor 1s infinite; }
+
+.spark {
+  animation: twinkle 3s infinite; }
 
 header {
   background-color: #404041;
@@ -84,21 +99,6 @@ form {
   margin: 5px auto;
   width: 80%; }
 
-.btn-global {
-  background-color: #D0D2D3;
-  border-radius: 20px;
-  border-style: none;
-  color: #FFFFFF;
-  font-size: 180%;
-  font-weight: lighter;
-  margin-top: 20px;
-  width: 45%; }
-  .btn-global:focus {
-    background-color: #929497;
-    outline: 0; }
-  .btn-global:hover {
-    background-color: #EB008B; }
-
 #range-container {
   display: none; }
 
@@ -122,7 +122,7 @@ form {
 
 section {
   height: 350px;
-  margin: 20px auto;
+  margin: -40px auto;
   max-width: 35%;
   padding-top: 20px;
   position: relative;
@@ -145,7 +145,7 @@ section {
 
 #emoji-element {
   color: #EB008B;
-  font-size: 322%;
+  font-size: 310%;
   position: absolute;
   top: 25%;
   left: 0;
@@ -179,6 +179,9 @@ section {
     max-width: 100%;
     font-size: 320%; }
 
+  #emoji-element {
+    font-size: 244%; }
+
   #guessInput {
     font-size: 150%; }
 
@@ -186,6 +189,7 @@ section {
     font-size: 12px; }
 
   .btn-global {
-    font-size: 140%; } }
+    font-size: 130%;
+    width: 35%; } }
 
 /*# sourceMappingURL=style.css.map */
